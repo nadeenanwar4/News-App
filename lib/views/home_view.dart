@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/widgets/app_bar_title.dart';
 import 'package:weather_app/widgets/category_list.dart';
 import 'package:weather_app/widgets/news_list_tile.dart';
+import 'package:weather_app/widgets/newslisttile_builder.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -27,7 +28,7 @@ class HomePage extends StatelessWidget {
                 height: 28,
               ),
             ),
-            NewsListTile(),
+            NewsListTileBuilder(),
           ],
         ),
       ),

@@ -1,44 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/models/news_model.dart';
 
 class NewsTile extends StatelessWidget {
+  final NewsModel newsData;
   const NewsTile({
     super.key,
+    required this.newsData,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: double.infinity,
-          height: 200,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/error.jpeg"),
-              fit: BoxFit.fill,
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            height: 200,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(
+                    newsData.imgPath ?? "assets/images/error.jpeg"),
+                fit: BoxFit.fill,
+              ),
+              borderRadius: BorderRadius.circular(8),
+              color: Colors.blueAccent,
             ),
-            borderRadius: BorderRadius.circular(8),
-            color: Colors.blueAccent,
           ),
-        ),
-        Text(
-          "hdgcsssssssssssssssssssssssssssssssajkachsVCWKYGDIQWYDGEGHECJKLDSBLLLLLLLCGIUEWCFHWELVUIWHVWvlu",
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            overflow: TextOverflow.ellipsis,
+          SizedBox(
+            height: 8,
           ),
-        ),
-        Text(
-          "hdgcsssssssssssssssssssssssssssssssajkachsVCWKYGDIQWYDGEGHECJKLDSBLLLLLLLCGIUEWCFHWELVUIWHVWvlu",
-          style: TextStyle(
-            color: Colors.grey,
-            fontSize: 16,
-            overflow: TextOverflow.ellipsis,
+          Text(
+            newsData.title,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
-        ),
-      ],
+          Text(
+            newsData.subTitle ?? "",
+            style: TextStyle(
+              color: Colors.grey,
+              fontSize: 16,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          SizedBox(
+            height: 16,
+          ),
+        ],
+      ),
     );
   }
 }

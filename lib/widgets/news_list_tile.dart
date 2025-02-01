@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/models/news_model.dart';
 import 'package:weather_app/widgets/news_tile.dart';
 
 class NewsListTile extends StatelessWidget {
+  final List<NewsModel> articles;
   const NewsListTile({
     super.key,
+    required this.articles,
   });
 
   @override
@@ -11,9 +14,11 @@ class NewsListTile extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) {
-          return NewsTile();
+          return NewsTile(
+            newsData: articles[index],
+          );
         },
-        childCount: 10,
+        childCount: articles.length,
       ),
     );
   }
