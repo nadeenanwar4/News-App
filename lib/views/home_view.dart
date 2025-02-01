@@ -14,8 +14,8 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: AppBarTitle(),
-        backgroundColor: Colors.white,
-        elevation: 0.7,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
