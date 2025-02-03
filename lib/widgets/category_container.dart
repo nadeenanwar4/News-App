@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/models/category_model.dart';
 
-class CategoryContainer extends StatelessWidget {
+class CategoryCard extends StatelessWidget {
   CategoryModel categoryModel;
-  CategoryContainer({
+  CategoryCard({
     super.key,
     required this.categoryModel,
   });
