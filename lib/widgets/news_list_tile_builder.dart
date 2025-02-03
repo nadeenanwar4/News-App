@@ -31,11 +31,21 @@ class _NewsListTileBuilderState extends State<NewsListTileBuilder> {
           } else if (snapshot.hasError) {
             return SliverToBoxAdapter(
               child: Center(
-                child: Text("There has been an error, Try again later"),
+                child: Text(
+                  "There has been an error, Try again later",
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 64,
+                  ),
+                ),
               ),
             );
           } else {
-            return SliverToBoxAdapter(child: Text("LOADING"));
+            return SliverToBoxAdapter(
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
           }
         });
   }
