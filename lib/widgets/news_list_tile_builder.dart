@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/models/news_model.dart';
-import 'package:weather_app/services/general_news_service.dart';
+import 'package:weather_app/services/news_service.dart';
 import 'package:weather_app/widgets/news_list_tile.dart';
 
 class NewsListTileBuilder extends StatefulWidget {
-  const NewsListTileBuilder({super.key});
+  final String categoryName;
+  const NewsListTileBuilder({super.key, required this.categoryName});
 
   @override
   State<NewsListTileBuilder> createState() => _NewsListTileBuilderState();
@@ -16,7 +17,7 @@ class _NewsListTileBuilderState extends State<NewsListTileBuilder> {
   @override
   void initState() {
     super.initState();
-    futureData = NewsService().getGeneralNews();
+    futureData = NewsService().getNews(categoryName: widget.categoryName);
   }
 
   @override

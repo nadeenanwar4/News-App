@@ -1,5 +1,5 @@
 class NewsModel {
-  final String? imgPath;
+  final String imgPath;
   final String title;
   final String? subTitle;
 

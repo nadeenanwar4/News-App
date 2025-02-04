@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/models/category_model.dart';
+import 'package:weather_app/views/category_view.dart';
 
 class CategoryCard extends StatelessWidget {
   CategoryModel categoryModel;
@@ -12,7 +13,15 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, categoryModel.categoryPagePath);
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) {
+              return CategoryView(
+                categoryName: categoryModel.categoryName,
+              );
+            },
+          ),
+        );
       },
       child: Padding(
         padding: const EdgeInsets.only(right: 16),

@@ -28,7 +28,9 @@ class HomePage extends StatelessWidget {
                 height: 28,
               ),
             ),
-            NewsListTileBuilder(),
+            NewsListTileBuilder(
+              categoryName: "egypt",
+            ),
           ],
         ),
       ),

@@ -7,31 +7,31 @@ class CategoryList extends StatelessWidget {
     CategoryModel(
         imgPath: "assets/images/business.jpeg",
         title: "Business",
-        categoryPagePath: '/businessView'),
+        categoryName: 'business'),
     CategoryModel(
         imgPath: "assets/images/entertainment.jpeg",
         title: "Entertainment",
-        categoryPagePath: '/entertainmentView'),
+        categoryName: 'art'),
     CategoryModel(
         imgPath: "assets/images/health.jpeg",
         title: "Health",
-        categoryPagePath: '/healthView'),
+        categoryName: 'health'),
     CategoryModel(
         imgPath: "assets/images/science.jpeg",
         title: "Science",
-        categoryPagePath: '/scienceView'),
+        categoryName: 'science'),
     CategoryModel(
         imgPath: "assets/images/sports.jpg",
         title: "Sports",
-        categoryPagePath: '/sportsView'),
+        categoryName: 'sports'),
     CategoryModel(
         imgPath: "assets/images/technology.jpeg",
         title: "Technology",
-        categoryPagePath: '/technologyView'),
+        categoryName: 'technology'),
     CategoryModel(
         imgPath: "assets/images/general.jpeg",
         title: "General",
-        categoryPagePath: '/generalView'),
+        categoryName: 'egypt'),
   ];
 
   const CategoryList({

@@ -1,10 +1,8 @@
 class CategoryModel {
   final String imgPath;
   final String title;
-  final String categoryPagePath;
+  final String categoryName;
 
   const CategoryModel(
-      {required this.categoryPagePath,
-      required this.imgPath,
-      required this.title});
+      {required this.categoryName, required this.imgPath, required this.title});
 }

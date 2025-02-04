@@ -8,12 +8,16 @@ class CategoryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          NewsListTileBuilder(
-            categoryName: categoryName,
-          ),
-        ],
+      appBar: AppBar(),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: CustomScrollView(
+          slivers: [
+            NewsListTileBuilder(
+              categoryName: categoryName,
+            ),
+          ],
+        ),
       ),
     );
   }
