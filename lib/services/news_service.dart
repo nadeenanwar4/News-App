@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:weather_app/models/news_model.dart';
@@ -18,7 +20,12 @@ class NewsService {
         articles.add(NewsModel.fromJson(article));
       }
       return articles;
+    } on DioException catch (e) {
+      final String errorMsg = e.response?.data ?? "oops, There was an error";
+      throw Exception(errorMsg);
     } catch (e) {
+      log(e.toString());
+      throw Exception("oops, There's an error, try later");
       return [];
     }
   }
